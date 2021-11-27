@@ -20,7 +20,7 @@ class FlashChat extends StatelessWidget {
       },
       theme: ThemeData.dark().copyWith(
         textTheme: TextTheme(
-          bodyText1: TextStyle(color: Colors.black54),
+          bodyText2: TextStyle(color: Colors.black54),
         ),
       ),
 

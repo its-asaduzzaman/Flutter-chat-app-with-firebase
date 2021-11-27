@@ -1,14 +1,34 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_app_with_firebase/screens/login_screen.dart';
 import 'package:flutter_chat_app_with_firebase/screens/registration_screen.dart';
+import 'dart:math';
 
 class WelcomeScreen extends StatefulWidget {
   static String id = 'welcome_screen';
+
   @override
   _WelcomeScreenState createState() => _WelcomeScreenState();
 }
 
-class _WelcomeScreenState extends State<WelcomeScreen> {
+class _WelcomeScreenState extends State<WelcomeScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController controller;
+  late Animation animation;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    controller = AnimationController(
+        duration: Duration(seconds: 1), vsync: this);
+    animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
+    controller.forward();
+    controller.addListener(() {
+      setState(() {});
+      print(animation.value);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,7 +45,8 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   tag: 'logo',
                   child: Container(
                     child: Image.asset('images/logo.png'),
-                    height: 60.0,
+                    height: animation.value*90,
+
                   ),
                 ),
                 Text(
@@ -33,6 +54,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   style: TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
+
                   ),
                 ),
               ],
@@ -68,7 +90,6 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 child: MaterialButton(
                   onPressed: () {
                     Navigator.pushNamed(context, RegistrationScreen.id);
-
                   },
                   minWidth: 200.0,
                   height: 42.0,
