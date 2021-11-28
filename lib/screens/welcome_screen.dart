@@ -1,7 +1,7 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat_app_with_firebase/screens/login_screen.dart';
 import 'package:flutter_chat_app_with_firebase/screens/registration_screen.dart';
-import 'dart:math';
 
 class WelcomeScreen extends StatefulWidget {
   static String id = 'welcome_screen';
@@ -20,13 +20,12 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     // TODO: implement initState
     super.initState();
     controller =
-        AnimationController(duration: const Duration(seconds: 3), vsync: this);
+        AnimationController(duration: const Duration(seconds: 1), vsync: this);
 
-    animation = ColorTween(begin:Colors.red, end:Colors.blue ).animate(controller);
-
+    animation =
+        ColorTween(begin: Colors.grey, end: Colors.white).animate(controller);
 
     controller.forward();
-
 
     controller.addListener(() {
       setState(() {});
@@ -39,7 +38,6 @@ class _WelcomeScreenState extends State<WelcomeScreen>
     controller.dispose();
     // TODO: implement dispose
     super.dispose();
-
   }
 
   @override
@@ -61,16 +59,21 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                     height: 60.0,
                   ),
                 ),
-                Text(
-                  'Flash Chat',
-                  style: TextStyle(
+                DefaultTextStyle(
+                  style: const TextStyle(
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
+                    color: Colors.black87,
+                  ),
+                  child: AnimatedTextKit(
+                    animatedTexts: [
+                      TypewriterAnimatedText('Flash Chat'),
+                    ],
                   ),
                 ),
               ],
             ),
-            SizedBox(
+           const SizedBox(
               height: 48.0,
             ),
             Padding(
@@ -86,7 +89,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   },
                   minWidth: 200.0,
                   height: 42.0,
-                  child: Text(
+                  child: const Text(
                     'Log In',
                   ),
                 ),
@@ -104,7 +107,7 @@ class _WelcomeScreenState extends State<WelcomeScreen>
                   },
                   minWidth: 200.0,
                   height: 42.0,
-                  child: Text(
+                  child: const Text(
                     'Register',
                   ),
                 ),

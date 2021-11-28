@@ -23,7 +23,6 @@ class FlashChat extends StatelessWidget {
           bodyText2: TextStyle(color: Colors.black54),
         ),
       ),
-
     );
   }
 }
