@@ -8,6 +8,8 @@ import '../constants.dart';
 class RegistrationScreen extends StatefulWidget {
   static String id = 'registration_screen';
 
+  const RegistrationScreen({Key? key}) : super(key: key);
+
   @override
   _RegistrationScreenState createState() => _RegistrationScreenState();
 }
@@ -68,6 +70,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                 try {
                   final newUser = await _auth.createUserWithEmailAndPassword(
                       email: email, password: password);
+                  // ignore: unnecessary_null_comparison
                   if (newUser != null){
                     Navigator.pushNamed(context, ChatScreen.id);
 
