@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "911049463791",
+    "project_id": "chat-app-nov",
+    "storage_bucket": "chat-app-nov.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:911049463791:android:e077ea2329f72d9d31481a",
+        "android_client_info": {
+          "package_name": "com.samrat.flutter_chat_app_with_firebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "911049463791-0fd2c80sn7u38tp5dhab83o5pu8ibfd2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZCRyHNu6WBRWVj5BpbC65L_Rzu2FrUlw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "911049463791-0fd2c80sn7u38tp5dhab83o5pu8ibfd2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
