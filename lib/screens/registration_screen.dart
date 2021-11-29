@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat_app_with_firebase/components/rounded_button.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_chat_app_with_firebase/screens/chat_screen.dart';
+import 'package:flutter_chat_app_with_firebase/screens/login_screen.dart';
+import 'package:flutter_chat_app_with_firebase/screens/welcome_screen.dart';
 
 import '../constants.dart';
 
@@ -72,7 +74,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                       email: email, password: password);
                   // ignore: unnecessary_null_comparison
                   if (newUser != null){
-                    Navigator.pushNamed(context, ChatScreen.id);
+                    Navigator.pushNamed(context, WelcomeScreen.id);
 
                   }
                 } catch (e) {
